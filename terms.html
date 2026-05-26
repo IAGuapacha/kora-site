@@ -52,7 +52,7 @@
 
       <section class="policy-section">
         <div class="section-heading"><span>02</span><h2>Descripción del servicio</h2></div>
-        <p>Kora es una aplicación de finanzas personales que te permite registrar cuentas, transacciones, presupuestos, pagos programados y transferencias en tu dispositivo. La app ofrece funciones opcionales como backup en la nube, detección de pagos desde Wallet, detección de pagos por SMS, escaneo de recibos por foto, captura de gastos por voz y sugerencia de categorías con IA. Algunas funciones avanzadas se ofrecen mediante la suscripción <strong>Kora Pro</strong>.</p>
+        <p>Kora es una aplicación de finanzas personales que te permite registrar cuentas, transacciones, presupuestos, pagos programados y transferencias en tu dispositivo, con backup automático en la nube asociado a tu cuenta. La app ofrece además funciones opcionales como detección de pagos desde Wallet, detección de pagos por SMS, escaneo de recibos por foto, captura de gastos por voz y sugerencia de categorías con IA. Algunas funciones avanzadas se ofrecen mediante la suscripción <strong>Kora Pro</strong>.</p>
         <p>Kora se proporciona "tal como está" y "según disponibilidad". No garantizamos que la app esté libre de errores ni que funcione sin interrupciones en todo momento.</p>
       </section>
 
@@ -69,21 +69,20 @@
 
       <section class="policy-section">
         <div class="section-heading"><span>04</span><h2>Cuentas y autenticación</h2></div>
-        <p>El uso básico de Kora no requiere registro ni cuenta. Si decides activar el backup en la nube, necesitarás iniciar sesión con tu cuenta de Google o Apple según la plataforma.</p>
-        <p>Eres responsable de mantener la seguridad de tu cuenta de Google o Apple. Kora no almacena contraseñas de terceros.</p>
+        <p>Kora requiere una cuenta para funcionar. Puedes registrarte e iniciar sesión con tu cuenta de Google, Sign in with Apple (en iOS) o email/contraseña. La autenticación se gestiona con Firebase Authentication.</p>
+        <p>Eres responsable de mantener la seguridad de tu cuenta y, si te registras con email/contraseña, de elegir una contraseña robusta. Kora no almacena contraseñas de terceros y delega en Firebase el almacenamiento seguro del hash cuando usas email/contraseña.</p>
       </section>
 
       <section class="policy-section">
         <div class="section-heading"><span>05</span><h2>Tus datos</h2></div>
-        <p>Tú eres el propietario de los datos financieros que introduces en Kora. La app los almacena localmente en tu dispositivo y, si activas el backup en la nube, en Firebase Storage asociado a tu cuenta autenticada.</p>
+        <p>Tú eres el propietario de los datos financieros que introduces en Kora. La app los almacena localmente en tu dispositivo y los respalda automáticamente en Firebase Storage asociado a tu cuenta autenticada.</p>
         <p>Puedes exportar, restaurar o eliminar tus datos en cualquier momento desde la configuración de la app. Consulta nuestra <a href="./privacy.html">Política de privacidad</a> para más detalles sobre el tratamiento de datos.</p>
       </section>
 
       <section class="policy-section">
         <div class="section-heading"><span>06</span><h2>Funciones opcionales</h2></div>
-        <p>Algunas funciones de Kora dependen de servicios de terceros y son completamente opcionales:</p>
+        <p>Kora usa Firebase Authentication y Firebase Storage para la cuenta y el backup automático, sujeto a los <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Términos de Firebase</a>. Además, varias funciones dependen de servicios de terceros y son completamente opcionales:</p>
         <ul class="policy-list">
-          <li><strong>Backup en la nube</strong>: usa Firebase Storage y Firebase Authentication. Sujeto a los <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Términos de Firebase</a>.</li>
           <li><strong>Suscripción Kora Pro</strong>: gestionada con RevenueCat y procesada por Google Play Billing o la App Store de Apple. Consulta la <a href="#subscriptions">sección de suscripciones</a> a continuación.</li>
           <li><strong>Detección de pagos desde Wallet</strong> (Android): requiere permiso de acceso a notificaciones. Solo procesa notificaciones de Google Wallet.</li>
           <li><strong>Detección de pagos por SMS</strong> (Android): si la activas, la app envía mensajes que parecen contener información de pagos a servicios de IA de Google/Firebase para extraer monto, comercio y fecha.</li>
@@ -161,7 +160,7 @@
 
       <section class="policy-section">
         <div class="section-heading"><span>02</span><h2>Description of service</h2></div>
-        <p>Kora is a personal finance application that lets you record accounts, transactions, budgets, scheduled payments, and transfers on your device. The app offers optional features such as cloud backup, Wallet payment detection, SMS payment detection, receipt photo scanning, voice expense capture, and AI category suggestions. Some advanced features are offered through the <strong>Kora Pro</strong> subscription.</p>
+        <p>Kora is a personal finance application that lets you record accounts, transactions, budgets, scheduled payments, and transfers on your device, with automatic cloud backup tied to your account. The app also offers optional features such as Wallet payment detection, SMS payment detection, receipt photo scanning, voice expense capture, and AI category suggestions. Some advanced features are offered through the <strong>Kora Pro</strong> subscription.</p>
         <p>Kora is provided "as is" and "as available." We do not guarantee that the app will be error-free or that it will function without interruption at all times.</p>
       </section>
 
@@ -178,21 +177,20 @@
 
       <section class="policy-section">
         <div class="section-heading"><span>04</span><h2>Accounts and authentication</h2></div>
-        <p>Basic use of Kora does not require registration or an account. If you choose to enable cloud backup, you will need to sign in with your Google or Apple account depending on the platform.</p>
-        <p>You are responsible for maintaining the security of your Google or Apple account. Kora does not store third-party passwords.</p>
+        <p>Kora requires an account to work. You can register and sign in with your Google account, Sign in with Apple (on iOS), or email/password. Authentication is handled by Firebase Authentication.</p>
+        <p>You are responsible for maintaining the security of your account and, if you register with email/password, for choosing a strong password. Kora does not store third-party passwords and relies on Firebase for the secure storage of the password hash when you use email/password.</p>
       </section>
 
       <section class="policy-section">
         <div class="section-heading"><span>05</span><h2>Your data</h2></div>
-        <p>You own the financial data you enter into Kora. The app stores it locally on your device and, if you enable cloud backup, in Firebase Storage associated with your authenticated account.</p>
+        <p>You own the financial data you enter into Kora. The app stores it locally on your device and automatically backs it up to Firebase Storage associated with your authenticated account.</p>
         <p>You can export, restore, or delete your data at any time from the app settings. See our <a href="./privacy.html">Privacy Policy</a> for more details on data handling.</p>
       </section>
 
       <section class="policy-section">
         <div class="section-heading"><span>06</span><h2>Optional features</h2></div>
-        <p>Some Kora features depend on third-party services and are entirely optional:</p>
+        <p>Kora uses Firebase Authentication and Firebase Storage for accounts and automatic backup, subject to the <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Firebase Terms</a>. In addition, several features depend on third-party services and are entirely optional:</p>
         <ul class="policy-list">
-          <li><strong>Cloud backup</strong>: uses Firebase Storage and Firebase Authentication. Subject to <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Firebase Terms</a>.</li>
           <li><strong>Kora Pro subscription</strong>: managed with RevenueCat and processed through Google Play Billing or the Apple App Store. See the <a href="#subscriptions-en">subscriptions section</a> below.</li>
           <li><strong>Wallet payment detection</strong> (Android): requires notification access permission. Only processes Google Wallet notifications.</li>
           <li><strong>SMS payment detection</strong> (Android): if you enable it, the app sends messages that appear to contain payment information to Google/Firebase AI services to extract amount, merchant, and date.</li>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kora — Política de privacidad</title>
-<meta name="description" content="Política de privacidad de Kora: almacenamiento local, backup opcional en la nube, analítica, diagnósticos y controles de eliminación de datos." />
+<meta name="description" content="Política de privacidad de Kora: almacenamiento local, backup automático en la nube, analítica, diagnósticos y controles de eliminación de datos." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -33,8 +33,8 @@
     <section class="policy-hero">
       <p class="eyebrow-text" data-lang="es">Política de privacidad</p>
       <p class="eyebrow-text" data-lang="en">Privacy policy</p>
-      <h1 data-lang="es">Privacidad clara para una app de finanzas con funciones opcionales en la nube.</h1>
-      <h1 data-lang="en">Clear privacy terms for a finance app with optional cloud features.</h1>
+      <h1 data-lang="es">Privacidad clara para una app de finanzas con backup automático y funciones opcionales.</h1>
+      <h1 data-lang="en">Clear privacy terms for a finance app with automatic backup and optional features.</h1>
       <p class="policy-hero-copy" data-lang="es">
         Esta política describe cómo <strong>Kora</strong> accede, usa, almacena y
         comparte datos cuando usas la app en Android o iPhone.
@@ -52,10 +52,10 @@
           <p data-lang="en">Your accounts, categories, transactions, budgets, scheduled payments, and transfers are primarily stored on your device.</p>
         </article>
         <article class="policy-hero-card">
-          <h2 data-lang="es">Backup opcional</h2>
-          <h2 data-lang="en">Optional backup</h2>
-          <p data-lang="es">El respaldo en la nube solo funciona si inicias sesión y decides usarlo.</p>
-          <p data-lang="en">Cloud backup only works if you sign in and choose to use it.</p>
+          <h2 data-lang="es">Backup automático</h2>
+          <h2 data-lang="en">Automatic backup</h2>
+          <p data-lang="es">Kora requiere una cuenta para funcionar y respalda tus datos automáticamente en tu sesión autenticada.</p>
+          <p data-lang="en">Kora requires an account to work and automatically backs up your data to your authenticated session.</p>
         </article>
         <article class="policy-hero-card">
           <h2 data-lang="es">Automatización opcional</h2>
@@ -90,7 +90,7 @@
           <article class="data-card">
             <h3>Datos financieros que ingresas</h3>
             <p>Cuentas, saldos, categorías, transacciones, presupuestos, pagos programados, transferencias y descripciones de movimientos.</p>
-            <p>Estos datos se guardan localmente en la base de datos de la app. Si activas el backup en la nube, también se incluyen en la copia remota.</p>
+            <p>Estos datos se guardan localmente en la base de datos de la app y se respaldan automáticamente en Firebase Storage asociado a tu cuenta autenticada.</p>
           </article>
           <article class="data-card">
             <h3>Configuración de la app</h3>
@@ -98,9 +98,9 @@
             <p>La copia de seguridad en la nube incluye idioma, formato numérico, moneda y tema.</p>
           </article>
           <article class="data-card">
-            <h3>Datos de autenticación para backup</h3>
-            <p>Si activas backup en la nube, la app usa Firebase Authentication con inicio de sesión de Google en Android/iOS y Sign in with Apple en iOS.</p>
-            <p>En ese flujo pueden tratarse tu identificador de usuario y tu correo electrónico asociado a la cuenta autenticada.</p>
+            <h3>Datos de cuenta y autenticación</h3>
+            <p>Para usar Kora necesitas una cuenta. La autenticación se realiza con Firebase Authentication, que admite inicio de sesión con Google en Android/iOS, Sign in with Apple en iOS y email/contraseña en ambas plataformas.</p>
+            <p>En ese flujo pueden tratarse tu identificador de usuario, tu correo electrónico y, si te registras con email/contraseña, el hash de la contraseña gestionado por Firebase.</p>
             <p>Si eliminas definitivamente tu cuenta desde la app, se solicita la eliminación de tu cuenta de Kora en Firebase Authentication y del backup remoto asociado. Esto no elimina tu cuenta de Google o Apple.</p>
           </article>
           <article class="data-card">
@@ -163,8 +163,8 @@
         <ul class="policy-list">
           <li>Mostrar y organizar tu información financiera dentro de la app.</li>
           <li>Crear copias locales de respaldo y restaurarlas cuando tú lo solicites.</li>
-          <li>Respaldar información en Firebase Storage si activas backup en la nube.</li>
-          <li>Permitir autenticación con Google o Apple para asociar ese backup a tu cuenta.</li>
+          <li>Respaldar tu información en Firebase Storage de forma automática mientras tienes sesión iniciada.</li>
+          <li>Permitir autenticación con Google, Apple o email/contraseña para asociar la app y el backup a tu cuenta.</li>
           <li>Mejorar estabilidad y solucionar fallos mediante Crashlytics.</li>
           <li>Entender el uso general del producto mediante eventos de Analytics orientados a producto y no a publicidad personalizada.</li>
           <li>Programar recordatorios locales y procesar pagos programados.</li>
@@ -201,7 +201,7 @@
           <li><strong>Cámara</strong>: solo se usa si activas el escaneo de recibos por foto.</li>
           <li><strong>Micrófono</strong>: solo se usa si activas la captura de gastos por voz; la transcripción la realiza el sistema operativo y la app no guarda el audio.</li>
           <li><strong>Biometría</strong>: solo se usa si activas desbloqueo biométrico.</li>
-          <li><strong>Cuenta Google o Apple</strong>: solo se usa si activas el backup en la nube.</li>
+          <li><strong>Cuenta de usuario</strong>: se requiere para usar Kora; puedes registrarte con Google, Apple o email/contraseña.</li>
         </ul>
       </section>
 
@@ -313,7 +313,7 @@
           <article class="data-card">
             <h3>Financial data you enter</h3>
             <p>Accounts, balances, categories, transactions, budgets, scheduled payments, transfers, and transaction descriptions.</p>
-            <p>This data is stored locally in the app database. If you enable cloud backup, it is also included in the remote backup file.</p>
+            <p>This data is stored locally in the app database and is automatically backed up to Firebase Storage tied to your authenticated account.</p>
           </article>
           <article class="data-card">
             <h3>App settings</h3>
@@ -321,9 +321,9 @@
             <p>Cloud backup includes language, number format, currency, and theme.</p>
           </article>
           <article class="data-card">
-            <h3>Authentication data for backup</h3>
-            <p>If you enable cloud backup, the app uses Firebase Authentication with Google Sign-In on Android/iOS and Sign in with Apple on iOS.</p>
-            <p>In that flow, your user identifier and the email associated with the authenticated account may be processed.</p>
+            <h3>Account and authentication data</h3>
+            <p>To use Kora you need an account. Authentication is handled by Firebase Authentication, which supports Google Sign-In on Android/iOS, Sign in with Apple on iOS, and email/password on both platforms.</p>
+            <p>In that flow, your user identifier, email address, and — if you register with email/password — the password hash managed by Firebase may be processed.</p>
             <p>If you permanently delete your account from the app, deletion of your Kora account in Firebase Authentication and its associated remote backup is requested. This does not delete your Google or Apple account.</p>
           </article>
           <article class="data-card">
@@ -386,8 +386,8 @@
         <ul class="policy-list">
           <li>To display and organize your financial information inside the app.</li>
           <li>To create local backups and restore them when you ask us to.</li>
-          <li>To back up information in Firebase Storage if you enable cloud backup.</li>
-          <li>To authenticate with Google or Apple and associate that backup with your account.</li>
+          <li>To automatically back up your information to Firebase Storage while you are signed in.</li>
+          <li>To authenticate with Google, Apple, or email/password and associate the app and backup with your account.</li>
           <li>To improve stability and troubleshoot issues through Crashlytics.</li>
           <li>To understand general product usage through Analytics events meant for product improvement, not third-party advertising.</li>
           <li>To schedule local reminders and process scheduled payments.</li>
@@ -424,7 +424,7 @@
           <li><strong>Camera</strong>: only used if you enable receipt photo scanning.</li>
           <li><strong>Microphone</strong>: only used if you enable voice expense capture; transcription is handled by the operating system and the app does not store the audio.</li>
           <li><strong>Biometrics</strong>: only used if you enable biometric unlock.</li>
-          <li><strong>Google or Apple account</strong>: only used if you enable cloud backup.</li>
+          <li><strong>User account</strong>: required to use Kora; you can register with Google, Apple, or email/password.</li>
         </ul>
       </section>
 
