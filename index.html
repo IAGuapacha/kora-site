@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kora — Finanzas personales con privacidad</title>
-<meta name="description" content="Kora guarda tus cuentas, transacciones y presupuestos directamente en tu dispositivo. IA para categorizar, detección de pagos desde Wallet y backup opcional." />
+<meta name="description" content="Kora guarda tus cuentas, transacciones y presupuestos en tu dispositivo con backup automático en la nube. IA para categorizar, detección de pagos desde Wallet y SMS, escaneo de recibos y captura por voz." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -43,13 +43,13 @@
         Tus finanzas, <em data-i="title_em">en tu bolsillo</em>, no en la nube de alguien más.
       </h1>
       <p class="hero-sub" data-i="sub">
-        Kora guarda tus cuentas, transacciones y presupuestos directamente en tu dispositivo.
-        Con IA para categorizar, detección de pagos desde Wallet y backup opcional cuando tú decides.
+        Kora guarda tus cuentas, transacciones y presupuestos en tu dispositivo, con backup automático en tu cuenta.
+        Con IA para categorizar, detección de pagos desde Wallet y SMS, escaneo de recibos y captura por voz.
       </p>
       <div class="hero-ctas">
         <a href="#download" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg>
-          <span data-i="cta_primary">Descargar gratis</span>
+          <span data-i="cta_primary">Descargar</span>
         </a>
         <a href="#features" class="btn btn-outline"><span data-i="cta_secondary">Ver funciones</span></a>
       </div>
@@ -200,7 +200,7 @@
   <div class="section-head reveal">
     <div class="eyebrow-text" data-i="feat_eye">Funciones</div>
     <h2 data-i="feat_title">Todo lo que necesitas para <em data-i="feat_title_em">controlar tu dinero</em>, sin lo que no.</h2>
-    <p data-i="feat_sub">Sin suscripciones escondidas, sin vender tus datos. Solo las funciones que realmente usas, diseñadas alrededor de tu privacidad.</p>
+    <p data-i="feat_sub">Sin cobros sorpresa, sin venta de datos. Solo las funciones que realmente usas, diseñadas alrededor de tu privacidad.</p>
   </div>
 
   <div class="features">
@@ -279,8 +279,8 @@
       <div class="icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h7"/><path d="M16 19l2 2 4-4"/></svg>
       </div>
-      <h3 data-i="f6_t">Backup opcional en la nube</h3>
-      <p data-i="f6_p">Cuando tú decides, cifra tu copia y súbela a Firebase con tu cuenta de Google o Apple. Puedes borrarla cuando quieras.</p>
+      <h3 data-i="f6_t">Backup automático en la nube</h3>
+      <p data-i="f6_p">Tus datos se respaldan automáticamente en Firebase con tu cuenta de Google, Apple o email. Puedes borrar la copia remota cuando quieras.</p>
     </article>
   </div>
 </section>
@@ -294,13 +294,13 @@
   <div class="flow">
     <div class="flow-step reveal">
       <div class="num mono">01</div>
-      <h3 data-i="st1_t">Descarga la app</h3>
-      <p data-i="st1_p">Sin registro obligatorio. Abres Kora y ya puedes registrar tu primera cuenta.</p>
+      <h3 data-i="st1_t">Descarga e inicia sesión</h3>
+      <p data-i="st1_p">Crea tu cuenta con Google, Apple o email en menos de un minuto. Tus datos quedan respaldados automáticamente desde el primer movimiento.</p>
     </div>
     <div class="flow-step reveal">
       <div class="num mono">02</div>
-      <h3 data-i="st2_t">Conecta lo que quieras</h3>
-      <p data-i="st2_p">Activa la detección desde Wallet, los recordatorios o el backup en la nube. Todo es opcional.</p>
+      <h3 data-i="st2_t">Activa lo que quieras</h3>
+      <p data-i="st2_p">Detección desde Wallet, pagos por SMS, escaneo de recibos, captura por voz y recordatorios. Todo opcional, tú decides.</p>
     </div>
     <div class="flow-step reveal">
       <div class="num mono">03</div>
@@ -318,9 +318,9 @@
         <span class="dot" style="background: white; box-shadow: 0 0 0 3px rgba(255,255,255,0.2);"></span>
         <span data-i="pr_eye">PRIVACIDAD POR DEFECTO</span>
       </div>
-      <h3 data-i="pr_h">Tus datos nunca salen del dispositivo, <em data-i="pr_h_em">a menos que tú decidas lo contrario.</em></h3>
+      <h3 data-i="pr_h">Tus datos viven en tu dispositivo, <em data-i="pr_h_em">y solo se respaldan en tu propia cuenta.</em></h3>
       <p data-i="pr_p" style="color:rgba(255,255,255,0.8); margin-top: 1.2rem; max-width: 42ch;">
-        Kora es una app local-first. Todo se guarda en SQLite en tu teléfono. El backup en la nube es una decisión tuya, no nuestra.
+        Kora es local-first: todo se guarda en SQLite en tu teléfono y se respalda en Firebase Storage asociado a tu cuenta. Sin anuncios, sin tracking publicitario, sin venta de datos.
       </p>
       <div class="tech-strip">
         <span class="tech-pill">SQLite</span>
@@ -333,10 +333,10 @@
       <h3 data-i="pr_list_t">Lo que Kora nunca hace</h3>
       <ul class="privacy-list">
         <li data-i="pr_l1">No vende tus datos a anunciantes, nunca.</li>
-        <li data-i="pr_l2">No envía transacciones a la nube sin tu consentimiento explícito.</li>
+        <li data-i="pr_l2">No comparte tus datos con anunciantes ni redes publicitarias.</li>
         <li data-i="pr_l3">No lee tu plantilla biométrica — la valida el sistema operativo.</li>
         <li data-i="pr_l4">No usa tus datos para entrenar modelos de terceros.</li>
-        <li data-i="pr_l5">No requiere conexión a internet para funcionar.</li>
+        <li data-i="pr_l5">Registra movimientos sin conexión; el backup y la IA se sincronizan cuando vuelve la red.</li>
       </ul>
     </div>
   </div>
@@ -351,7 +351,7 @@
   <div class="faq">
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q1">¿Kora es gratis?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a1">Sí. Kora es gratuita y sin anuncios. No vendemos datos ni ofrecemos un plan pagado por ahora.</p>
+      <p class="faq-a" data-i="a1">La descarga y las funciones esenciales son gratuitas y sin anuncios. Algunas funciones avanzadas están disponibles a través de la suscripción opcional Kora Pro. Nunca vendemos tus datos.</p>
     </details>
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q2">¿Se conecta con mi banco?</h4><span class="plus">+</span></summary>
@@ -367,7 +367,7 @@
     </details>
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q5">¿La IA lee mis transacciones?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a5">Solo si activas la sugerencia de categoría con IA. En ese caso se envía el comercio, monto y texto de la notificación a Firebase AI para proponer una categoría. Puedes desactivarla en cualquier momento.</p>
+      <p class="faq-a" data-i="a5">Solo si activas funciones de IA opcionales: sugerencia de categoría, detección de pagos por SMS o escaneo de recibos. En esos casos se envían los datos mínimos necesarios (comercio, monto, texto o imagen) a Firebase AI para procesarlos. Puedes desactivarlas cuando quieras.</p>
     </details>
   </div>
 </section>
@@ -377,11 +377,11 @@
   <div class="final-card">
     <h2 data-i="fin_t">Empieza con tus finanzas, <em data-i="fin_em">como deberían empezar:</em> en tu teléfono.</h2>
     <div class="store-ctas">
-      <a href="#" class="store-btn">
+      <span class="store-btn" aria-disabled="true">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04a4.5 4.5 0 012.67-4.12 5.3 5.3 0 00-4.2-2.27c-1.78-.18-3.5 1.05-4.4 1.05-.93 0-2.33-1.03-3.83-1-1.97.03-3.8 1.15-4.82 2.92-2.06 3.57-.52 8.82 1.47 11.71 1 1.42 2.16 3 3.67 2.95 1.48-.06 2.03-.95 3.82-.95 1.77 0 2.29.95 3.83.92 1.59-.03 2.59-1.43 3.55-2.86a12.6 12.6 0 001.63-3.33 4.34 4.34 0 01-2.39-3.92zM14.3 3.92A4.3 4.3 0 0015.32 1a4.4 4.4 0 00-2.85 1.48c-.62.71-1.17 1.86-1.02 2.96 1.15.09 2.32-.59 2.85-1.52z"/></svg>
-        <span><span class="small" data-i="app_store_s">Disponible en</span><span class="big">App Store</span></span>
-      </a>
-      <a href="#" class="store-btn">
+        <span><span class="small" data-i="app_store_s">Próximamente en</span><span class="big">App Store</span></span>
+      </span>
+      <a href="https://play.google.com/store/apps/details?id=com.stoneframe.kora" target="_blank" rel="noopener" class="store-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8a2 2 0 00-.6 1.4v17.6a2 2 0 00.6 1.4l.1.1L13 12.5v-1L3.7 1.7l-.1.1zM16.8 15.8L13.6 12.6 3.9 22.3c.4.3.9.3 1.4 0l11.5-6.5M20.5 10.2l-3.7-2.1-3.7 3.7 3.7 3.6 3.7-2.1a1.5 1.5 0 000-2.6M5.3 1.7c-.5-.3-1-.3-1.4 0l9.7 9.8 3.7-3.7L5.3 1.7z"/></svg>
         <span><span class="small" data-i="play_store_s">Disponible en</span><span class="big">Google Play</span></span>
       </a>
@@ -406,8 +406,8 @@ const I18N = {
     eyebrow: "Local-first",
     title: "Tus finanzas, ", title_em: "en tu bolsillo",
     title_after: ", no en la nube de alguien más.",
-    sub: "Kora guarda tus cuentas, transacciones y presupuestos directamente en tu dispositivo. Con IA para categorizar, detección de pagos desde Wallet y backup opcional cuando tú decides.",
-    cta_primary: "Descargar gratis", cta_secondary: "Ver funciones",
+    sub: "Kora guarda tus cuentas, transacciones y presupuestos en tu dispositivo, con backup automático en tu cuenta. Con IA para categorizar, detección de pagos desde Wallet y SMS, escaneo de recibos y captura por voz.",
+    cta_primary: "Descargar", cta_secondary: "Ver funciones",
     meta1: "Sin anuncios", meta2: "Sin venta de datos", meta3: "Android · iOS",
     app_hello: "Buenas tardes", app_balance: "Balance total · Abril",
     app_in: "ingresos", app_out: "gastos",
@@ -425,7 +425,7 @@ const I18N = {
     feat_eye: "Funciones",
     feat_title: "Todo lo que necesitas para ", feat_title_em: "controlar tu dinero",
     feat_title_after: ", sin lo que no.",
-    feat_sub: "Sin suscripciones escondidas, sin vender tus datos. Solo las funciones que realmente usas, diseñadas alrededor de tu privacidad.",
+    feat_sub: "Sin cobros sorpresa, sin venta de datos. Solo las funciones que realmente usas, diseñadas alrededor de tu privacidad.",
     f1_t: "Análisis que se entiende",
     f1_p: "Visualiza de dónde sale tu dinero, en qué se va y cuánto puedes ahorrar este mes. Con gráficos que cuentan una historia, no solo puntos.",
     f1_ch_t: "Gasto por semana · Abril",
@@ -438,31 +438,31 @@ const I18N = {
     f4_b1: "Restaurantes", f4_b2: "Transporte", f4_b3: "Ocio",
     f5_t: "Bloqueo con PIN o biometría",
     f5_p: "PIN con hash y salt. La app se oscurece al salir. Tu plantilla biométrica jamás sale del sistema operativo.",
-    f6_t: "Backup opcional en la nube",
-    f6_p: "Cuando tú decides, cifra tu copia y súbela a Firebase con tu cuenta de Google o Apple. Puedes borrarla cuando quieras.",
+    f6_t: "Backup automático en la nube",
+    f6_p: "Tus datos se respaldan automáticamente en Firebase con tu cuenta de Google, Apple o email. Puedes borrar la copia remota cuando quieras.",
     how_eye: "Cómo funciona",
     how_title: "Tres pasos para tener ", how_em: "el control", how_after: ".",
-    st1_t: "Descarga la app", st1_p: "Sin registro obligatorio. Abres Kora y ya puedes registrar tu primera cuenta.",
-    st2_t: "Conecta lo que quieras", st2_p: "Activa la detección desde Wallet, los recordatorios o el backup en la nube. Todo es opcional.",
+    st1_t: "Descarga e inicia sesión", st1_p: "Crea tu cuenta con Google, Apple o email en menos de un minuto. Tus datos quedan respaldados automáticamente desde el primer movimiento.",
+    st2_t: "Activa lo que quieras", st2_p: "Detección desde Wallet, pagos por SMS, escaneo de recibos, captura por voz y recordatorios. Todo opcional, tú decides.",
     st3_t: "Ajusta tu presupuesto", st3_p: "Define metas por categoría y deja que Kora te avise antes de que te pases.",
     pr_eye: "PRIVACIDAD POR DEFECTO",
-    pr_h: "Tus datos nunca salen del dispositivo, ", pr_h_em: "a menos que tú decidas lo contrario.",
-    pr_p: "Kora es una app local-first. Todo se guarda en SQLite en tu teléfono. El backup en la nube es una decisión tuya, no nuestra.",
+    pr_h: "Tus datos viven en tu dispositivo, ", pr_h_em: "y solo se respaldan en tu propia cuenta.",
+    pr_p: "Kora es local-first: todo se guarda en SQLite en tu teléfono y se respalda en Firebase Storage asociado a tu cuenta. Sin anuncios, sin tracking publicitario, sin venta de datos.",
     pr_pill: "Biometría del sistema", pr_pill2: "Sin ads",
     pr_list_t: "Lo que Kora nunca hace",
     pr_l1: "No vende tus datos a anunciantes, nunca.",
-    pr_l2: "No envía transacciones a la nube sin tu consentimiento explícito.",
+    pr_l2: "No comparte tus datos con anunciantes ni redes publicitarias.",
     pr_l3: "No lee tu plantilla biométrica — la valida el sistema operativo.",
     pr_l4: "No usa tus datos para entrenar modelos de terceros.",
-    pr_l5: "No requiere conexión a internet para funcionar.",
+    pr_l5: "Registra movimientos sin conexión; el backup y la IA se sincronizan cuando vuelve la red.",
     faq_eye: "Preguntas frecuentes", faq_title: "Antes de descargar.",
-    q1: "¿Kora es gratis?", a1: "Sí. Kora es gratuita y sin anuncios. No vendemos datos ni ofrecemos un plan pagado por ahora.",
+    q1: "¿Kora es gratis?", a1: "La descarga y las funciones esenciales son gratuitas y sin anuncios. Algunas funciones avanzadas están disponibles a través de la suscripción opcional Kora Pro. Nunca vendemos tus datos.",
     q2: "¿Se conecta con mi banco?", a2: "No directamente. En Android puede leer pagos desde notificaciones de Google Wallet si tú lo activas. El resto lo registras tú — lo que mantiene tus credenciales seguras.",
     q3: "¿Qué pasa si cambio de teléfono?", a3: "Puedes exportar una copia local en cualquier momento, o activar el backup en la nube con tu cuenta de Google o Apple para restaurar desde otro dispositivo.",
     q4: "¿Puedo eliminar mi cuenta y datos?", a4: "Sí. Desde Configuración puedes eliminar todos los datos locales y, si usas backup en la nube, borrar la copia remota y la cuenta asociada.",
-    q5: "¿La IA lee mis transacciones?", a5: "Solo si activas la sugerencia de categoría con IA. En ese caso se envía el comercio, monto y texto de la notificación a Firebase AI para proponer una categoría. Puedes desactivarla en cualquier momento.",
+    q5: "¿La IA lee mis transacciones?", a5: "Solo si activas funciones de IA opcionales: sugerencia de categoría, detección de pagos por SMS o escaneo de recibos. En esos casos se envían los datos mínimos necesarios (comercio, monto, texto o imagen) a Firebase AI para procesarlos. Puedes desactivarlas cuando quieras.",
     fin_t: "Empieza con tus finanzas, ", fin_em: "como deberían empezar:", fin_after: " en tu teléfono.",
-    app_store_s: "Disponible en", play_store_s: "Disponible en",
+    app_store_s: "Próximamente en", play_store_s: "Disponible en",
     foot_m: "Hecho con cuidado", foot_1: "Privacidad", foot_2: "Términos"
   },
   en: {
@@ -471,8 +471,8 @@ const I18N = {
     eyebrow: "Local-first",
     title: "Your finances, ", title_em: "in your pocket",
     title_after: ", not in someone else's cloud.",
-    sub: "Kora stores your accounts, transactions, and budgets directly on your device. AI categorization, Wallet payment detection, and optional backup — on your terms.",
-    cta_primary: "Download free", cta_secondary: "See features",
+    sub: "Kora stores your accounts, transactions, and budgets on your device, with automatic backup to your account. AI categorization, Wallet and SMS payment detection, receipt scanning, and voice capture.",
+    cta_primary: "Download", cta_secondary: "See features",
     meta1: "No ads", meta2: "No data selling", meta3: "Android · iOS",
     app_hello: "Good afternoon", app_balance: "Total balance · April",
     app_in: "income", app_out: "expenses",
@@ -490,7 +490,7 @@ const I18N = {
     feat_eye: "Features",
     feat_title: "Everything you need to ", feat_title_em: "control your money",
     feat_title_after: ", nothing you don't.",
-    feat_sub: "No hidden subscriptions, no selling your data. Just the features you actually use, designed around your privacy.",
+    feat_sub: "No surprise charges, no selling your data. Just the features you actually use, designed around your privacy.",
     f1_t: "Insights you get",
     f1_p: "See where your money comes from, where it goes, and how much you can save. With charts that tell a story, not just dots.",
     f1_ch_t: "Weekly spend · April",
@@ -503,31 +503,31 @@ const I18N = {
     f4_b1: "Restaurants", f4_b2: "Transport", f4_b3: "Leisure",
     f5_t: "PIN or biometric lock",
     f5_p: "Salted PIN hash. The app blurs when you leave. Your biometric template never leaves the operating system.",
-    f6_t: "Optional cloud backup",
-    f6_p: "When you decide, encrypt your copy and upload to Firebase with Google or Apple. Delete anytime.",
+    f6_t: "Automatic cloud backup",
+    f6_p: "Your data is automatically backed up to Firebase with your Google, Apple, or email account. Delete the remote copy anytime.",
     how_eye: "How it works",
     how_title: "Three steps to ", how_em: "take control", how_after: ".",
-    st1_t: "Download the app", st1_p: "No mandatory signup. Open Kora and register your first account right away.",
-    st2_t: "Enable what you want", st2_p: "Turn on Wallet detection, reminders, or cloud backup. Everything is optional.",
+    st1_t: "Download and sign in", st1_p: "Create your account with Google, Apple, or email in under a minute. Your data is backed up automatically from the very first entry.",
+    st2_t: "Enable what you want", st2_p: "Wallet detection, SMS payments, receipt scanning, voice capture, and reminders. All optional, your call.",
     st3_t: "Set your budget", st3_p: "Define goals per category and let Kora warn you before you overspend.",
     pr_eye: "PRIVACY BY DEFAULT",
-    pr_h: "Your data never leaves your device, ", pr_h_em: "unless you decide otherwise.",
-    pr_p: "Kora is a local-first app. Everything stores to SQLite on your phone. Cloud backup is your decision, not ours.",
+    pr_h: "Your data lives on your device, ", pr_h_em: "and is only backed up to your own account.",
+    pr_p: "Kora is local-first: everything lives in SQLite on your phone and is backed up to Firebase Storage tied to your account. No ads, no ad tracking, no data selling.",
     pr_pill: "System biometrics", pr_pill2: "No ads",
     pr_list_t: "What Kora never does",
     pr_l1: "Never sells your data to advertisers.",
-    pr_l2: "Never sends transactions to the cloud without your explicit consent.",
+    pr_l2: "Never shares your data with advertisers or ad networks.",
     pr_l3: "Never reads your biometric template — it's validated by the OS.",
     pr_l4: "Never uses your data to train third-party models.",
-    pr_l5: "Never requires internet to work.",
+    pr_l5: "Lets you log entries offline; backup and AI sync when the connection is back.",
     faq_eye: "Frequently asked questions", faq_title: "Before you download.",
-    q1: "Is Kora free?", a1: "Yes. Kora is free and ad-free. We don't sell data and there's no paid plan for now.",
+    q1: "Is Kora free?", a1: "The download and core features are free and ad-free. Some advanced features are available through the optional Kora Pro subscription. We never sell your data.",
     q2: "Does it connect to my bank?", a2: "Not directly. On Android it can read payments from Google Wallet notifications if you enable it. The rest you log yourself — which keeps your credentials safe.",
     q3: "What if I switch phones?", a3: "You can export a local backup anytime, or enable cloud backup with your Google or Apple account to restore on another device.",
     q4: "Can I delete my account and data?", a4: "Yes. From Settings you can delete all local data and, if you use cloud backup, remove the remote copy and associated account.",
-    q5: "Does the AI read my transactions?", a5: "Only if you enable AI category suggestion. In that case the merchant, amount, and notification text are sent to Firebase AI to propose a category. You can turn it off anytime.",
+    q5: "Does the AI read my transactions?", a5: "Only if you enable optional AI features: category suggestion, SMS payment detection, or receipt scanning. In those cases the minimum needed data (merchant, amount, text, or image) is sent to Firebase AI for processing. You can turn them off anytime.",
     fin_t: "Start with your finances, ", fin_em: "the way they should start:", fin_after: " in your phone.",
-    app_store_s: "Download on", play_store_s: "Get it on",
+    app_store_s: "Coming soon to", play_store_s: "Get it on",
     foot_m: "Made with care", foot_1: "Privacy", foot_2: "Terms"
   }
 };

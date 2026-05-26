@@ -741,6 +741,8 @@ section.block {
   transition: background 0.2s, transform 0.12s;
 }
 .store-btn:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+.store-btn[aria-disabled="true"] { opacity: 0.55; cursor: default; }
+.store-btn[aria-disabled="true"]:hover { background: rgba(255,255,255,0.1); transform: none; }
 .store-btn .small { font-size: 0.7rem; opacity: 0.75; display: block; line-height: 1; margin-bottom: 3px; white-space: nowrap; }
 .store-btn .big { font-size: 1.05rem; font-weight: 600; line-height: 1; white-space: nowrap; }
 .store-btn svg { width: 22px; height: 22px; flex: none; }
