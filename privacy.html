@@ -60,8 +60,8 @@
         <article class="policy-hero-card">
           <h2 data-lang="es">Automatización opcional</h2>
           <h2 data-lang="en">Optional automation</h2>
-          <p data-lang="es">En Android, la detección de pagos desde notificaciones de Wallet y la sugerencia de categoría con IA son funciones opcionales.</p>
-          <p data-lang="en">On Android, Wallet payment detection from notifications and AI category suggestion are optional features.</p>
+          <p data-lang="es">La detección de pagos desde Wallet y SMS en Android, el escaneo de recibos por foto, la captura de gastos por voz y la sugerencia de categoría con IA son funciones opcionales.</p>
+          <p data-lang="en">Wallet and SMS payment detection on Android, receipt photo scanning, voice expense capture, and AI category suggestion are optional features.</p>
         </article>
         <article class="policy-hero-card">
           <h2 data-lang="es">Controles de borrado</h2>
@@ -75,7 +75,7 @@
     <article class="policy" data-lang="es">
       <section class="policy-section">
         <div class="section-heading"><span>01</span><h2>Fecha de entrada en vigor</h2></div>
-        <p>Última actualización: <strong>8 de abril de 2026</strong>.</p>
+        <p>Última actualización: <strong>26 de mayo de 2026</strong>.</p>
       </section>
 
       <section class="policy-section">
@@ -104,13 +104,19 @@
             <p>Si eliminas definitivamente tu cuenta desde la app, se solicita la eliminación de tu cuenta de Kora en Firebase Authentication y del backup remoto asociado. Esto no elimina tu cuenta de Google o Apple.</p>
           </article>
           <article class="data-card">
-            <h3>Analítica de uso</h3>
-            <p>La app registra eventos de producto con Firebase Analytics, por ejemplo creación, edición o eliminación de cuentas, categorías, presupuestos, transacciones, transferencias y pagos programados.</p>
-            <p>Para reducir exposición de datos, estos eventos usan indicadores y rangos aproximados; no están pensados para enviar descripciones libres ni montos exactos.</p>
+            <h3>Datos de suscripción (Kora Pro)</h3>
+            <p>Si compras o activas un plan Kora Pro, la gestión de la suscripción se realiza con RevenueCat. Pueden tratarse tu identificador de usuario, el estado del entitlement, el identificador del producto, los recibos de compra y eventos de renovación o cancelación.</p>
+            <p>El cobro lo procesan Google Play Billing en Android y la App Store de Apple en iOS según sus propios términos. Kora no recibe ni almacena tus datos de tarjeta o método de pago.</p>
           </article>
           <article class="data-card">
-            <h3>Diagnóstico técnico</h3>
+            <h3>Analítica de uso</h3>
+            <p>La app registra eventos de producto con Firebase Analytics y Amplitude, por ejemplo creación, edición o eliminación de cuentas, categorías, presupuestos, transacciones, transferencias y pagos programados.</p>
+            <p>Para reducir exposición de datos, estos eventos usan indicadores y rangos aproximados; no están pensados para enviar descripciones libres ni montos exactos. Amplitude recibe los eventos vinculados a un identificador anónimo de instalación.</p>
+          </article>
+          <article class="data-card">
+            <h3>Diagnóstico técnico e integridad</h3>
             <p>La app usa Firebase Crashlytics para registrar fallos, errores no controlados y diagnósticos técnicos necesarios para estabilidad y soporte.</p>
+            <p>Para proteger las llamadas a los servicios de backend, la app usa Firebase App Check con Play Integrity en Android y DeviceCheck o App Attest en iOS. Estos servicios atestan la integridad del dispositivo y de la app, sin enviar el contenido de tus datos financieros.</p>
           </article>
           <article class="data-card">
             <h3>Seguridad local</h3>
@@ -125,6 +131,21 @@
             <h3>Automatización de Wallet en Android</h3>
             <p>Si activas el acceso a notificaciones para detectar pagos desde Wallet, la app puede leer el nombre del comercio, el monto detectado, la app de origen, marcas de tiempo y el texto bruto de la notificación para proponerte un gasto pendiente de revisión.</p>
             <p>Esa información se guarda en tu dispositivo para que puedas revisarla antes de convertirla en una transacción.</p>
+          </article>
+          <article class="data-card">
+            <h3>Detección de pagos por SMS en Android</h3>
+            <p>Si activas la detección de pagos por SMS, la app lee mensajes que parecen contener información de pagos (remitente, contenido del mensaje y marca de tiempo) y los envía a servicios de IA de Google/Firebase para extraer monto, comercio y fecha y proponerte un gasto pendiente de revisión.</p>
+            <p>El gasto pendiente se guarda en tu dispositivo hasta que lo apruebes, lo rechaces o elimines los datos. La app no almacena el SMS original ni lo incluye en el backup en la nube.</p>
+          </article>
+          <article class="data-card">
+            <h3>Escaneo de recibos por foto</h3>
+            <p>Si activas el escaneo de recibos, la app accede a la cámara para capturar la imagen y la envía a servicios de IA de Google/Firebase para extraer monto, comercio y fecha, y proponerte un gasto pendiente de revisión.</p>
+            <p>La imagen se procesa de forma transaccional: la app no la guarda y no se incluye en el backup en la nube.</p>
+          </article>
+          <article class="data-card">
+            <h3>Captura de gastos por voz</h3>
+            <p>Si activas la captura por voz, la app accede al micrófono para capturar lo que dictas. La transcripción a texto la realiza el servicio de reconocimiento de voz del sistema operativo (Apple en iOS, Google en Android) según sus propias políticas.</p>
+            <p>Kora no almacena el audio. La transcripción resultante se procesa para extraer monto, descripción y categoría sugerida, y se muestra como gasto pendiente de revisión antes de convertirlo en una transacción.</p>
           </article>
           <article class="data-card">
             <h3>Sugerencia de categoría con IA en Android</h3>
@@ -147,7 +168,11 @@
           <li>Mejorar estabilidad y solucionar fallos mediante Crashlytics.</li>
           <li>Entender el uso general del producto mediante eventos de Analytics orientados a producto y no a publicidad personalizada.</li>
           <li>Programar recordatorios locales y procesar pagos programados.</li>
-          <li>En Android, detectar pagos desde notificaciones de Wallet y sugerir categorías si activas esas funciones.</li>
+          <li>En Android, detectar pagos desde notificaciones de Wallet y desde mensajes SMS, y sugerir categorías, cuando activas esas funciones.</li>
+          <li>Procesar fotos de recibos con IA para extraer monto, comercio y fecha y proponerte un gasto pendiente de revisión, cuando activas esa función.</li>
+          <li>Permitir registrar gastos por voz transcribiéndolos con el servicio de reconocimiento de voz del sistema operativo, cuando activas esa función.</li>
+          <li>Gestionar la suscripción Kora Pro a través de RevenueCat y los procesadores de pago de Google Play y App Store.</li>
+          <li>Verificar la integridad de la app y del dispositivo al llamar a servicios de backend mediante Firebase App Check.</li>
           <li>Proteger la apertura de la app con PIN, biometría y medidas visuales de privacidad.</li>
         </ul>
       </section>
@@ -157,9 +182,12 @@
         <p>No vendemos tus datos personales.</p>
         <p>Podemos compartir datos con proveedores tecnológicos en estos casos:</p>
         <ul class="policy-list">
-          <li><strong>Google / Firebase</strong>: Authentication, Google Sign-In, Storage, Analytics, Crashlytics y Firebase AI, cuando la función correspondiente está activa o es necesaria para la operación del servicio.</li>
-          <li><strong>Apple</strong>: Sign in with Apple en iOS, además de APIs del sistema para biometría, notificaciones y widgets.</li>
-          <li><strong>Servicios del sistema operativo</strong>: para recordatorios, widgets, almacenamiento seguro y control visual de privacidad.</li>
+          <li><strong>Google / Firebase</strong>: Authentication, Google Sign-In, Storage, Analytics, Crashlytics, Firebase AI y Firebase App Check (Play Integrity en Android), cuando la función correspondiente está activa o es necesaria para la operación del servicio.</li>
+          <li><strong>Apple</strong>: Sign in with Apple en iOS, DeviceCheck o App Attest para integridad, además de APIs del sistema para biometría, notificaciones, reconocimiento de voz y widgets.</li>
+          <li><strong>Amplitude (Amplitude, Inc.)</strong>: analítica de producto. Recibe eventos de uso vinculados a un identificador anónimo de instalación.</li>
+          <li><strong>RevenueCat (RevenueCat, Inc.)</strong>: gestión de la suscripción Kora Pro. Recibe el identificador de usuario, el estado del entitlement y los recibos de compra emitidos por Apple o Google.</li>
+          <li><strong>Google Play Billing y App Store de Apple</strong>: procesamiento del pago de la suscripción Kora Pro conforme a sus propios términos. Kora no recibe los datos de tarjeta ni de método de pago.</li>
+          <li><strong>Servicios del sistema operativo</strong>: para recordatorios, widgets, almacenamiento seguro, reconocimiento de voz y control visual de privacidad.</li>
         </ul>
         <p>No usamos la información recogida por la app para vender perfiles publicitarios ni para publicidad conductual de terceros.</p>
       </section>
@@ -169,6 +197,9 @@
         <ul class="policy-list">
           <li><strong>Notificaciones</strong>: se usan para recordatorios diarios y avisos de pagos programados.</li>
           <li><strong>Acceso a notificaciones en Android</strong>: solo es necesario para la detección opcional de pagos de Wallet.</li>
+          <li><strong>Lectura de SMS en Android</strong>: solo se usa si activas la detección de pagos por SMS.</li>
+          <li><strong>Cámara</strong>: solo se usa si activas el escaneo de recibos por foto.</li>
+          <li><strong>Micrófono</strong>: solo se usa si activas la captura de gastos por voz; la transcripción la realiza el sistema operativo y la app no guarda el audio.</li>
           <li><strong>Biometría</strong>: solo se usa si activas desbloqueo biométrico.</li>
           <li><strong>Cuenta Google o Apple</strong>: solo se usa si activas el backup en la nube.</li>
         </ul>
@@ -181,7 +212,8 @@
           <li>El backup remoto se conserva en Firebase Storage hasta que lo elimines desde los controles de la app. Cerrar sesión detiene el acceso desde ese dispositivo, pero no elimina automáticamente una copia remota ya existente.</li>
           <li>Si eliminas definitivamente tu cuenta desde la app, se solicita el borrado de la cuenta autenticada de Kora y del backup remoto asociado. Esto no elimina tu cuenta de Google o Apple.</li>
           <li>Si usas el flujo de eliminación total de datos con sesión de backup activa, la app intenta borrar primero el backup remoto y luego limpiar los datos locales.</li>
-          <li>Los datos de detección de Wallet pendientes de revisión se conservan localmente hasta que los apruebes, rechaces o elimines los datos de la app.</li>
+          <li>Los datos de detección de Wallet y de SMS pendientes de revisión se conservan localmente hasta que los apruebes, rechaces o elimines los datos de la app. La app no almacena el SMS original.</li>
+          <li>Las fotos de recibos no se almacenan: se procesan de forma transaccional y no se incluyen en el backup en la nube.</li>
           <li>Analytics y Crashlytics pueden conservarse según las políticas y periodos de retención del proveedor correspondiente.</li>
         </ul>
       </section>
@@ -191,6 +223,8 @@
         <ul class="policy-list">
           <li>Puedes activar o desactivar recordatorios y permisos de notificaciones.</li>
           <li>En Android, puedes activar o desactivar la detección de pagos desde Wallet.</li>
+          <li>En Android, puedes activar o desactivar la detección de pagos por SMS.</li>
+          <li>Puedes activar o desactivar el escaneo de recibos por foto.</li>
           <li>En Android, puedes activar o desactivar la sugerencia de categoría con IA.</li>
           <li>Puedes activar o desactivar el bloqueo con PIN y el desbloqueo biométrico.</li>
           <li>Puedes exportar una copia local de tus datos desde la app.</li>
@@ -235,13 +269,14 @@
           <li>Uso de almacenamiento seguro del dispositivo para datos de seguridad local.</li>
           <li>Hash del PIN con salt, en lugar de guardar el PIN en texto plano.</li>
           <li>Reglas de Firebase Storage que restringen acceso al usuario autenticado.</li>
+          <li>Verificación de integridad de la app y del dispositivo mediante Firebase App Check (Play Integrity en Android y DeviceCheck o App Attest en iOS) al llamar a servicios de backend.</li>
           <li>Protección visual de la app al pasar a segundo plano mediante pantalla segura o desenfoque, según plataforma.</li>
         </ul>
       </section>
 
       <section class="policy-section">
         <div class="section-heading"><span>10</span><h2>Transferencias internacionales</h2></div>
-        <p>Si usas funciones respaldadas por Google, Firebase o Apple, parte del tratamiento de datos puede realizarse en infraestructura ubicada fuera de tu país de residencia, conforme a las políticas y medidas de esos proveedores.</p>
+        <p>Si usas funciones respaldadas por Google, Firebase, Apple, Amplitude o RevenueCat, parte del tratamiento de datos puede realizarse en infraestructura ubicada fuera de tu país de residencia, conforme a las políticas y medidas de esos proveedores.</p>
       </section>
 
       <section class="policy-section">
@@ -263,7 +298,7 @@
     <article class="policy" data-lang="en">
       <section class="policy-section">
         <div class="section-heading"><span>01</span><h2>Effective date</h2></div>
-        <p>Last updated: <strong>April 8, 2026</strong>.</p>
+        <p>Last updated: <strong>May 26, 2026</strong>.</p>
       </section>
 
       <section class="policy-section">
@@ -292,13 +327,19 @@
             <p>If you permanently delete your account from the app, deletion of your Kora account in Firebase Authentication and its associated remote backup is requested. This does not delete your Google or Apple account.</p>
           </article>
           <article class="data-card">
-            <h3>Usage analytics</h3>
-            <p>The app logs product events with Firebase Analytics, such as creating, editing, or deleting accounts, categories, budgets, transactions, transfers, and scheduled payments.</p>
-            <p>To reduce data exposure, these events use indicators and approximate ranges; they are not intended to send free-text descriptions or exact monetary amounts.</p>
+            <h3>Subscription data (Kora Pro)</h3>
+            <p>If you purchase or activate a Kora Pro plan, subscription management is handled with RevenueCat. Your user identifier, entitlement status, product identifier, purchase receipts, and renewal or cancellation events may be processed.</p>
+            <p>Payment is processed by Google Play Billing on Android and the Apple App Store on iOS under their own terms. Kora does not receive or store your card or payment-method details.</p>
           </article>
           <article class="data-card">
-            <h3>Technical diagnostics</h3>
+            <h3>Usage analytics</h3>
+            <p>The app logs product events with Firebase Analytics and Amplitude, such as creating, editing, or deleting accounts, categories, budgets, transactions, transfers, and scheduled payments.</p>
+            <p>To reduce data exposure, these events use indicators and approximate ranges; they are not intended to send free-text descriptions or exact monetary amounts. Amplitude receives the events tied to an anonymous install identifier.</p>
+          </article>
+          <article class="data-card">
+            <h3>Technical diagnostics and integrity</h3>
             <p>The app uses Firebase Crashlytics to record crashes, unhandled errors, and technical diagnostics needed for stability and support.</p>
+            <p>To protect calls to backend services, the app uses Firebase App Check with Play Integrity on Android and DeviceCheck or App Attest on iOS. These services attest the integrity of the device and the app without sending the contents of your financial data.</p>
           </article>
           <article class="data-card">
             <h3>Local security data</h3>
@@ -313,6 +354,21 @@
             <h3>Wallet automation on Android</h3>
             <p>If you enable notification access to detect Wallet payments, the app may read the merchant name, detected amount, source app, timestamps, and raw notification text to propose a pending expense for your review.</p>
             <p>This information is stored on your device so you can review it before turning it into a transaction.</p>
+          </article>
+          <article class="data-card">
+            <h3>SMS payment detection on Android</h3>
+            <p>If you enable SMS payment detection, the app reads messages that appear to contain payment information (sender, message body, and timestamp) and sends them to Google/Firebase AI services to extract amount, merchant, and date, and propose a pending expense for your review.</p>
+            <p>The pending expense is stored on your device until you approve it, reject it, or clear app data. The app does not store the original SMS or include it in cloud backup.</p>
+          </article>
+          <article class="data-card">
+            <h3>Receipt photo scanning</h3>
+            <p>If you enable receipt scanning, the app accesses the camera to capture the image and sends it to Google/Firebase AI services to extract amount, merchant, and date, and propose a pending expense for your review.</p>
+            <p>The image is processed transactionally: the app does not store it and it is not included in cloud backup.</p>
+          </article>
+          <article class="data-card">
+            <h3>Voice expense capture</h3>
+            <p>If you enable voice capture, the app accesses the microphone to capture what you dictate. Speech-to-text transcription is performed by the operating system's speech recognition service (Apple on iOS, Google on Android) under their own policies.</p>
+            <p>Kora does not store the audio. The resulting transcription is processed to extract amount, description, and a suggested category, and is shown as a pending expense for your review before becoming a transaction.</p>
           </article>
           <article class="data-card">
             <h3>AI category suggestion on Android</h3>
@@ -335,7 +391,11 @@
           <li>To improve stability and troubleshoot issues through Crashlytics.</li>
           <li>To understand general product usage through Analytics events meant for product improvement, not third-party advertising.</li>
           <li>To schedule local reminders and process scheduled payments.</li>
-          <li>On Android, to detect Wallet payments from notifications and suggest categories if you enable those features.</li>
+          <li>On Android, to detect payments from Wallet notifications and from SMS messages, and to suggest categories, when you enable those features.</li>
+          <li>To process receipt photos with AI to extract amount, merchant, and date and propose a pending expense for your review, when you enable that feature.</li>
+          <li>To allow logging expenses by voice by transcribing them with the operating system's speech recognition service, when you enable that feature.</li>
+          <li>To manage the Kora Pro subscription through RevenueCat and the Google Play and App Store payment processors.</li>
+          <li>To verify the integrity of the app and the device when calling backend services through Firebase App Check.</li>
           <li>To protect access to the app with PIN, biometrics, and privacy screen measures.</li>
         </ul>
       </section>
@@ -345,9 +405,12 @@
         <p>We do not sell your personal data.</p>
         <p>We may share data with technology providers in these cases:</p>
         <ul class="policy-list">
-          <li><strong>Google / Firebase</strong>: Authentication, Google Sign-In, Storage, Analytics, Crashlytics, and Firebase AI when the related feature is active or needed for the service to operate.</li>
-          <li><strong>Apple</strong>: Sign in with Apple on iOS, plus system APIs for biometrics, notifications, and widgets.</li>
-          <li><strong>Operating system services</strong>: for reminders, widgets, secure storage, and visual privacy controls.</li>
+          <li><strong>Google / Firebase</strong>: Authentication, Google Sign-In, Storage, Analytics, Crashlytics, Firebase AI, and Firebase App Check (Play Integrity on Android) when the related feature is active or needed for the service to operate.</li>
+          <li><strong>Apple</strong>: Sign in with Apple on iOS, DeviceCheck or App Attest for integrity, plus system APIs for biometrics, notifications, speech recognition, and widgets.</li>
+          <li><strong>Amplitude (Amplitude, Inc.)</strong>: product analytics. Receives usage events tied to an anonymous install identifier.</li>
+          <li><strong>RevenueCat (RevenueCat, Inc.)</strong>: management of the Kora Pro subscription. Receives the user identifier, the entitlement status, and purchase receipts issued by Apple or Google.</li>
+          <li><strong>Google Play Billing and Apple App Store</strong>: payment processing for the Kora Pro subscription under their own terms. Kora does not receive card or payment-method data.</li>
+          <li><strong>Operating system services</strong>: for reminders, widgets, secure storage, speech recognition, and visual privacy controls.</li>
         </ul>
         <p>We do not use data collected by the app to sell advertising profiles or for third-party behavioral advertising.</p>
       </section>
@@ -357,6 +420,9 @@
         <ul class="policy-list">
           <li><strong>Notifications</strong>: used for daily reminders and scheduled payment alerts.</li>
           <li><strong>Notification access on Android</strong>: only required for optional Wallet payment detection.</li>
+          <li><strong>SMS read access on Android</strong>: only used if you enable SMS payment detection.</li>
+          <li><strong>Camera</strong>: only used if you enable receipt photo scanning.</li>
+          <li><strong>Microphone</strong>: only used if you enable voice expense capture; transcription is handled by the operating system and the app does not store the audio.</li>
           <li><strong>Biometrics</strong>: only used if you enable biometric unlock.</li>
           <li><strong>Google or Apple account</strong>: only used if you enable cloud backup.</li>
         </ul>
@@ -369,7 +435,8 @@
           <li>Remote backup remains in Firebase Storage until you delete it from the app controls. Signing out stops access from that device, but it does not automatically delete an existing remote backup.</li>
           <li>If you permanently delete your account from the app, deletion of the authenticated Kora account and its associated remote backup is requested. This does not delete your Google or Apple account.</li>
           <li>If you use the full data deletion flow while a cloud backup session is active, the app attempts to delete the remote backup first and then clears local data.</li>
-          <li>Wallet detection items pending review stay local until you approve them, reject them, or clear app data.</li>
+          <li>Wallet and SMS detection items pending review stay local until you approve them, reject them, or clear app data. The app does not store the original SMS.</li>
+          <li>Receipt photos are not stored: they are processed transactionally and are not included in cloud backup.</li>
           <li>Analytics and Crashlytics data may be retained according to the applicable provider policies and retention periods.</li>
         </ul>
       </section>
@@ -379,6 +446,8 @@
         <ul class="policy-list">
           <li>You can enable or disable reminders and notification permissions.</li>
           <li>On Android, you can enable or disable Wallet payment detection.</li>
+          <li>On Android, you can enable or disable SMS payment detection.</li>
+          <li>You can enable or disable receipt photo scanning.</li>
           <li>On Android, you can enable or disable AI category suggestion.</li>
           <li>You can enable or disable PIN lock and biometric unlock.</li>
           <li>You can export a local backup of your data from the app.</li>
@@ -423,13 +492,14 @@
           <li>Use of secure device storage for local security data.</li>
           <li>Salted PIN hashing instead of storing the PIN in plain text.</li>
           <li>Firebase Storage rules that restrict access to the authenticated user.</li>
+          <li>App and device integrity verification through Firebase App Check (Play Integrity on Android and DeviceCheck or App Attest on iOS) when calling backend services.</li>
           <li>Visual privacy protection when the app moves to the background through secure-screen or blur behavior, depending on platform.</li>
         </ul>
       </section>
 
       <section class="policy-section">
         <div class="section-heading"><span>10</span><h2>International transfers</h2></div>
-        <p>If you use features powered by Google, Firebase, or Apple, some data processing may occur on infrastructure located outside your country of residence, subject to the applicable provider policies and safeguards.</p>
+        <p>If you use features powered by Google, Firebase, Apple, Amplitude, or RevenueCat, some data processing may occur on infrastructure located outside your country of residence, subject to the applicable provider policies and safeguards.</p>
       </section>
 
       <section class="policy-section">
