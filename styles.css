@@ -120,10 +120,12 @@ a { color: var(--accent-strong); }
   font-size: 0.78rem; font-weight: 700;
 }
 .lang-switch button {
-  border: 0; background: transparent; color: var(--muted);
+  border: 0; background: transparent; color: var(--accent-strong);
   padding: 0.4rem 0.65rem; border-radius: 999px; cursor: pointer;
   font: inherit;
+  transition: background 0.15s ease, color 0.15s ease;
 }
+.lang-switch button:hover:not(.active) { background: rgba(255,255,255,0.5); }
 .lang-switch button.active {
   background: var(--accent); color: white;
 }
