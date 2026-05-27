@@ -351,23 +351,19 @@
   <div class="faq">
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q1">¿Kora es gratis?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a1">La descarga y las funciones esenciales son gratuitas y sin anuncios. Algunas funciones avanzadas están disponibles a través de la suscripción opcional Kora Pro. Nunca vendemos tus datos.</p>
+      <p class="faq-a" data-i="a1">La descarga y las funciones esenciales son gratuitas y sin anuncios. Algunas funciones avanzadas están disponibles a través de la suscripción opcional Kora Pro.</p>
     </details>
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q2">¿Se conecta con mi banco?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a2">No directamente. En Android puede leer pagos desde notificaciones de Google Wallet si tú lo activas. El resto lo registras tú — lo que mantiene tus credenciales seguras.</p>
+      <p class="faq-a" data-i="a2">No directamente. En Android puede leer pagos desde notificaciones de Google Wallet si tú lo activas. El resto lo registras tú.</p>
     </details>
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q3">¿Qué pasa si cambio de teléfono?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a3">Puedes exportar una copia local en cualquier momento, o activar el backup en la nube con tu cuenta de Google o Apple para restaurar desde otro dispositivo.</p>
+      <p class="faq-a" data-i="a3">Solo inicia sesión con la misma cuenta en el nuevo dispositivo y tendrás todos tus datos disponibles.</p>
     </details>
     <details class="faq-item reveal">
       <summary class="faq-q"><h4 data-i="q4">¿Puedo eliminar mi cuenta y datos?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a4">Sí. Desde Configuración puedes eliminar todos los datos locales y, si usas backup en la nube, borrar la copia remota y la cuenta asociada.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary class="faq-q"><h4 data-i="q5">¿La IA lee mis transacciones?</h4><span class="plus">+</span></summary>
-      <p class="faq-a" data-i="a5">Solo si activas funciones de IA opcionales: sugerencia de categoría, detección de pagos por SMS o escaneo de recibos. En esos casos se envían los datos mínimos necesarios (comercio, monto, texto o imagen) a Firebase AI para procesarlos. Puedes desactivarlas cuando quieras.</p>
+      <p class="faq-a" data-i="a4">Sí. Desde Configuración puedes eliminar todos tus datos y tu cuenta de Kora, incluyendo la copia en la nube.</p>
     </details>
   </div>
 </section>
@@ -457,11 +453,10 @@ const I18N = {
     pr_l4: "No usa tus datos para entrenar modelos de terceros.",
     pr_l5: "Registra movimientos sin conexión; el backup y la IA se sincronizan cuando vuelve la red.",
     faq_eye: "Preguntas frecuentes", faq_title: "Antes de descargar.",
-    q1: "¿Kora es gratis?", a1: "La descarga y las funciones esenciales son gratuitas y sin anuncios. Algunas funciones avanzadas están disponibles a través de la suscripción opcional Kora Pro. Nunca vendemos tus datos.",
-    q2: "¿Se conecta con mi banco?", a2: "No directamente. En Android puede leer pagos desde notificaciones de Google Wallet si tú lo activas. El resto lo registras tú — lo que mantiene tus credenciales seguras.",
-    q3: "¿Qué pasa si cambio de teléfono?", a3: "Puedes exportar una copia local en cualquier momento, o activar el backup en la nube con tu cuenta de Google o Apple para restaurar desde otro dispositivo.",
-    q4: "¿Puedo eliminar mi cuenta y datos?", a4: "Sí. Desde Configuración puedes eliminar todos los datos locales y, si usas backup en la nube, borrar la copia remota y la cuenta asociada.",
-    q5: "¿La IA lee mis transacciones?", a5: "Solo si activas funciones de IA opcionales: sugerencia de categoría, detección de pagos por SMS o escaneo de recibos. En esos casos se envían los datos mínimos necesarios (comercio, monto, texto o imagen) a Firebase AI para procesarlos. Puedes desactivarlas cuando quieras.",
+    q1: "¿Kora es gratis?", a1: "La descarga y las funciones esenciales son gratuitas y sin anuncios. Algunas funciones avanzadas están disponibles a través de la suscripción opcional Kora Pro.",
+    q2: "¿Se conecta con mi banco?", a2: "No directamente. En Android puede leer pagos desde notificaciones de Google Wallet si tú lo activas. El resto lo registras tú.",
+    q3: "¿Qué pasa si cambio de teléfono?", a3: "Solo inicia sesión con la misma cuenta en el nuevo dispositivo y tendrás todos tus datos disponibles.",
+    q4: "¿Puedo eliminar mi cuenta y datos?", a4: "Sí. Desde Configuración puedes eliminar todos tus datos y tu cuenta de Kora, incluyendo la copia en la nube.",
     fin_t: "Registra tu ", fin_em: "primer gasto", fin_after: " en segundos.",
     app_store_s: "Próximamente en", play_store_s: "Disponible en",
     foot_m: "Hecho con cuidado", foot_1: "Privacidad", foot_2: "Términos"
@@ -523,11 +518,10 @@ const I18N = {
     pr_l4: "Never uses your data to train third-party models.",
     pr_l5: "Lets you log entries offline; backup and AI sync when the connection is back.",
     faq_eye: "Frequently asked questions", faq_title: "Before you download.",
-    q1: "Is Kora free?", a1: "The download and core features are free and ad-free. Some advanced features are available through the optional Kora Pro subscription. We never sell your data.",
-    q2: "Does it connect to my bank?", a2: "Not directly. On Android it can read payments from Google Wallet notifications if you enable it. The rest you log yourself — which keeps your credentials safe.",
-    q3: "What if I switch phones?", a3: "You can export a local backup anytime, or enable cloud backup with your Google or Apple account to restore on another device.",
-    q4: "Can I delete my account and data?", a4: "Yes. From Settings you can delete all local data and, if you use cloud backup, remove the remote copy and associated account.",
-    q5: "Does the AI read my transactions?", a5: "Only if you enable optional AI features: category suggestion, SMS payment detection, or receipt scanning. In those cases the minimum needed data (merchant, amount, text, or image) is sent to Firebase AI for processing. You can turn them off anytime.",
+    q1: "Is Kora free?", a1: "The download and core features are free and ad-free. Some advanced features are available through the optional Kora Pro subscription.",
+    q2: "Does it connect to my bank?", a2: "Not directly. On Android it can read payments from Google Wallet notifications if you enable it. The rest you log yourself.",
+    q3: "What if I switch phones?", a3: "Just sign in with the same account on the new device and all your data will be there.",
+    q4: "Can I delete my account and data?", a4: "Yes. From Settings you can delete all your data and your Kora account, including the cloud copy.",
     fin_t: "Log your ", fin_em: "first expense", fin_after: " in seconds.",
     app_store_s: "Coming soon to", play_store_s: "Get it on",
     foot_m: "Made with care", foot_1: "Privacy", foot_2: "Terms"
