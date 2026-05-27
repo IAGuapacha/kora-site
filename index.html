@@ -280,7 +280,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h7"/><path d="M16 19l2 2 4-4"/></svg>
       </div>
       <h3 data-i="f6_t">Backup automático en la nube</h3>
-      <p data-i="f6_p">Tus datos se respaldan automáticamente en Firebase con tu cuenta de Google, Apple o email. Puedes borrar la copia remota cuando quieras.</p>
+      <p data-i="f6_p">Tu información se respalda automáticamente en la nube con tu cuenta. Cambia de teléfono sin perder nada y borra la copia cuando quieras.</p>
     </article>
   </div>
 </section>
@@ -318,15 +318,15 @@
         <span class="dot" style="background: white; box-shadow: 0 0 0 3px rgba(255,255,255,0.2);"></span>
         <span data-i="pr_eye">PRIVACIDAD POR DEFECTO</span>
       </div>
-      <h3 data-i="pr_h">Tus datos viven en tu dispositivo, <em data-i="pr_h_em">y solo se respaldan en tu propia cuenta.</em></h3>
+      <h3 data-i="pr_h">Tu vida financiera te pertenece, <em data-i="pr_h_em">a ti y a nadie más.</em></h3>
       <p data-i="pr_p" style="color:rgba(255,255,255,0.8); margin-top: 1.2rem; max-width: 42ch;">
-        Kora es local-first: todo se guarda en SQLite en tu teléfono y se respalda en Firebase Storage asociado a tu cuenta. Sin anuncios, sin tracking publicitario, sin venta de datos.
+        Tu información se guarda en tu teléfono y se respalda en una copia personal vinculada a tu cuenta. Nadie más la ve. Sin anuncios, sin tracking publicitario, sin venta de datos.
       </p>
       <div class="tech-strip">
-        <span class="tech-pill">SQLite</span>
-        <span class="tech-pill">PIN + salt</span>
-        <span class="tech-pill" data-i="pr_pill">Biometría del sistema</span>
-        <span class="tech-pill" data-i="pr_pill2">Sin ads</span>
+        <span class="tech-pill" data-i="pr_pill3">Datos en tu teléfono</span>
+        <span class="tech-pill" data-i="pr_pill4">Copia personal en la nube</span>
+        <span class="tech-pill" data-i="pr_pill">PIN y biometría</span>
+        <span class="tech-pill" data-i="pr_pill2">Sin anuncios</span>
       </div>
     </div>
     <div class="privacy-card reveal">
@@ -439,16 +439,17 @@ const I18N = {
     f5_t: "Bloqueo con PIN o biometría",
     f5_p: "PIN con hash y salt. La app se oscurece al salir. Tu plantilla biométrica jamás sale del sistema operativo.",
     f6_t: "Backup automático en la nube",
-    f6_p: "Tus datos se respaldan automáticamente en Firebase con tu cuenta de Google, Apple o email. Puedes borrar la copia remota cuando quieras.",
+    f6_p: "Tu información se respalda automáticamente en la nube con tu cuenta. Cambia de teléfono sin perder nada y borra la copia cuando quieras.",
     how_eye: "Cómo funciona",
     how_title: "Tres pasos para tener ", how_em: "el control", how_after: ".",
     st1_t: "Descarga e inicia sesión", st1_p: "Crea tu cuenta con Google, Apple o email en menos de un minuto. Tus datos quedan respaldados automáticamente desde el primer movimiento.",
     st2_t: "Activa lo que quieras", st2_p: "Detección desde Wallet, pagos por SMS, escaneo de recibos, captura por voz y recordatorios. Todo opcional, tú decides.",
     st3_t: "Ajusta tu presupuesto", st3_p: "Define metas por categoría y deja que Kora te avise antes de que te pases.",
     pr_eye: "PRIVACIDAD POR DEFECTO",
-    pr_h: "Tus datos viven en tu dispositivo, ", pr_h_em: "y solo se respaldan en tu propia cuenta.",
-    pr_p: "Kora es local-first: todo se guarda en SQLite en tu teléfono y se respalda en Firebase Storage asociado a tu cuenta. Sin anuncios, sin tracking publicitario, sin venta de datos.",
-    pr_pill: "Biometría del sistema", pr_pill2: "Sin ads",
+    pr_h: "Tu vida financiera te pertenece, ", pr_h_em: "a ti y a nadie más.",
+    pr_p: "Tu información se guarda en tu teléfono y se respalda en una copia personal vinculada a tu cuenta. Nadie más la ve. Sin anuncios, sin tracking publicitario, sin venta de datos.",
+    pr_pill: "PIN y biometría", pr_pill2: "Sin anuncios",
+    pr_pill3: "Datos en tu teléfono", pr_pill4: "Copia personal en la nube",
     pr_list_t: "Lo que Kora nunca hace",
     pr_l1: "No vende tus datos a anunciantes, nunca.",
     pr_l2: "No comparte tus datos con anunciantes ni redes publicitarias.",
@@ -504,16 +505,17 @@ const I18N = {
     f5_t: "PIN or biometric lock",
     f5_p: "Salted PIN hash. The app blurs when you leave. Your biometric template never leaves the operating system.",
     f6_t: "Automatic cloud backup",
-    f6_p: "Your data is automatically backed up to Firebase with your Google, Apple, or email account. Delete the remote copy anytime.",
+    f6_p: "Your data is automatically backed up to the cloud with your account. Switch phones without losing a thing, and delete the copy whenever you want.",
     how_eye: "How it works",
     how_title: "Three steps to ", how_em: "take control", how_after: ".",
     st1_t: "Download and sign in", st1_p: "Create your account with Google, Apple, or email in under a minute. Your data is backed up automatically from the very first entry.",
     st2_t: "Enable what you want", st2_p: "Wallet detection, SMS payments, receipt scanning, voice capture, and reminders. All optional, your call.",
     st3_t: "Set your budget", st3_p: "Define goals per category and let Kora warn you before you overspend.",
     pr_eye: "PRIVACY BY DEFAULT",
-    pr_h: "Your data lives on your device, ", pr_h_em: "and is only backed up to your own account.",
-    pr_p: "Kora is local-first: everything lives in SQLite on your phone and is backed up to Firebase Storage tied to your account. No ads, no ad tracking, no data selling.",
-    pr_pill: "System biometrics", pr_pill2: "No ads",
+    pr_h: "Your financial life belongs to you, ", pr_h_em: "and only you.",
+    pr_p: "Your information stays on your phone and is backed up as a personal copy tied to your account. No one else sees it. No ads, no ad tracking, no data selling.",
+    pr_pill: "PIN and biometrics", pr_pill2: "No ads",
+    pr_pill3: "Data on your phone", pr_pill4: "Personal cloud copy",
     pr_list_t: "What Kora never does",
     pr_l1: "Never sells your data to advertisers.",
     pr_l2: "Never shares your data with advertisers or ad networks.",
