@@ -23,8 +23,8 @@
     </div>
     <div class="nav-cta">
       <div class="lang-switch" role="group" aria-label="Language">
-        <button data-lang="es" class="active">ES</button>
-        <button data-lang="en">EN</button>
+        <button data-lang-target="es" class="active">ES</button>
+        <button data-lang-target="en">EN</button>
       </div>
       <a href="#download" class="btn btn-primary" data-i="nav_cta">Descargar</a>
     </div>
@@ -548,14 +548,14 @@ function applyLang(lang) {
     t.fin_t + '<em>' + t.fin_em + '</em>' + t.fin_after;
 
   document.querySelectorAll('.lang-switch button').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
+    b.classList.toggle('active', b.dataset.langTarget === lang);
   });
 
   try { localStorage.setItem('kora-lang', lang); } catch (_) {}
 }
 
 document.querySelectorAll('.lang-switch button').forEach(b => {
-  b.addEventListener('click', () => applyLang(b.dataset.lang));
+  b.addEventListener('click', () => applyLang(b.dataset.langTarget));
 });
 
 const preferred = (() => {
