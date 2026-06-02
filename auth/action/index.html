@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Kora — Tu cuenta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 40px 36px;
+    }
+    .auth-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 30px;
+    }
+    .auth-card h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.5rem;
+      color: var(--text);
+    }
+    .auth-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0 0 1.6rem;
+    }
+    .auth-sub strong { color: var(--text); font-weight: 600; }
+
+    .auth-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      margin-bottom: 0.4rem;
+    }
+    .auth-field { position: relative; margin-bottom: 1rem; }
+    .auth-field input {
+      width: 100%;
+      padding: 0.85rem 2.9rem 0.85rem 0.95rem;
+      font: inherit;
+      font-size: 0.98rem;
+      color: var(--text);
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .auth-field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+    .auth-toggle {
+      position: absolute; right: 0.6rem; top: 50%; transform: translateY(-50%);
+      background: none; border: none; cursor: pointer; padding: 0.35rem;
+      color: var(--muted); display: flex; line-height: 0;
+    }
+    .auth-hint { font-size: 0.8rem; color: var(--muted); margin: -0.4rem 0 1.1rem; }
+
+    .auth-submit { width: 100%; justify-content: center; padding: 0.9rem; font-size: 0.98rem; }
+    .auth-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    .auth-msg {
+      font-size: 0.85rem; margin-top: 0.9rem; padding: 0.8rem 0.9rem;
+      border-radius: var(--radius-xs); line-height: 1.45; display: none;
+    }
+    .auth-msg.error { display: block; background: rgba(198,40,40,0.08); color: var(--expense); }
+    .auth-msg.ok { display: block; background: rgba(46,125,50,0.08); color: var(--income); }
+
+    .auth-state-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.1rem;
+    }
+    .auth-state-icon.ok { background: rgba(46,125,50,0.1); color: var(--income); }
+    .auth-state-icon.err { background: rgba(198,40,40,0.1); color: var(--expense); }
+    .auth-centered { text-align: center; }
+
+    .auth-back { margin-top: 1.6rem; text-align: center; }
+    .auth-back a { font-size: 0.85rem; color: var(--accent-strong); text-decoration: none; font-weight: 600; }
+    .auth-back a:hover { text-decoration: underline; }
+
+    .auth-spinner {
+      width: 38px; height: 38px; margin: 1.5rem auto;
+      border: 3px solid var(--bg-accent);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: auth-spin 0.8s linear infinite;
+    }
+    @keyframes auth-spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <main class="auth-card">
+    <div class="auth-brand"><span class="brand-mark"></span>Kora</div>
+    <div id="content">
+      <div class="auth-spinner"></div>
+    </div>
+    <div class="auth-back" id="back"></div>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getAuth,
+      verifyPasswordResetCode,
+      confirmPasswordReset,
+      applyActionCode,
+      checkActionCode,
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    // apiKey es pública por diseño en Firebase (no es un secreto).
+    const firebaseConfig = {
+      apiKey: "AIzaSyDBaxW4_GRVjIvZYY83s2x3fLlqbYrJyzg",
+      authDomain: "money-manager-6533c.firebaseapp.com",
+      projectId: "money-manager-6533c",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const params = new URLSearchParams(window.location.search);
+    const lang = (params.get("lang") || "es").toLowerCase().startsWith("en") ? "en" : "es";
+    auth.languageCode = lang;
+
+    const T = {
+      es: {
+        resetTitle: "Restablece tu contraseña",
+        resetSubtitle: (e) => `Crea una nueva contraseña para <strong>${e}</strong>.`,
+        newPassword: "Nueva contraseña",
+        confirmPassword: "Confirma la contraseña",
+        passwordHint: "Mínimo 6 caracteres.",
+        save: "Guardar contraseña",
+        saving: "Guardando…",
+        mismatch: "Las contraseñas no coinciden.",
+        tooShort: "La contraseña debe tener al menos 6 caracteres.",
+        successTitle: "Contraseña actualizada",
+        successSub: "Ya puedes volver a Kora e iniciar sesión con tu nueva contraseña.",
+        verifyTitle: "Correo verificado",
+        verifySub: "Tu correo quedó confirmado. Ya puedes usar Kora con normalidad.",
+        recoverTitle: "Correo restaurado",
+        recoverSub: "Restauramos el correo de tu cuenta. Te recomendamos restablecer tu contraseña.",
+        invalidTitle: "Enlace no válido",
+        invalidSub: "Este enlace expiró o ya fue usado. Solicita uno nuevo desde la app.",
+        genericError: "Algo salió mal. Solicita un enlace nuevo desde la app.",
+        back: "Volver a Kora",
+      },
+      en: {
+        resetTitle: "Reset your password",
+        resetSubtitle: (e) => `Create a new password for <strong>${e}</strong>.`,
+        newPassword: "New password",
+        confirmPassword: "Confirm password",
+        passwordHint: "At least 6 characters.",
+        save: "Save password",
+        saving: "Saving…",
+        mismatch: "Passwords do not match.",
+        tooShort: "Password must be at least 6 characters.",
+        successTitle: "Password updated",
+        successSub: "You can return to Kora and sign in with your new password.",
+        verifyTitle: "Email verified",
+        verifySub: "Your email is confirmed. You can keep using Kora.",
+        recoverTitle: "Email restored",
+        recoverSub: "We restored your account email. We recommend resetting your password.",
+        invalidTitle: "Invalid link",
+        invalidSub: "This link expired or was already used. Request a new one from the app.",
+        genericError: "Something went wrong. Request a new link from the app.",
+        back: "Back to Kora",
+      },
+    }[lang];
+
+    const content = document.getElementById("content");
+    document.documentElement.lang = lang;
+    document.getElementById("back").innerHTML = `<a href="/">${T.back}</a>`;
+
+    const mode = params.get("mode");
+    const oobCode = params.get("oobCode");
+
+    const eyeOpen = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>';
+    const eyeOff = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+
+    function renderState(kind, title, sub) {
+      const icon = kind === "ok"
+        ? '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+        : '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      content.innerHTML = `
+        <div class="auth-centered">
+          <div class="auth-state-icon ${kind === "ok" ? "ok" : "err"}">${icon}</div>
+          <h1>${title}</h1>
+          <p class="auth-sub" style="margin-bottom:0">${sub}</p>
+        </div>`;
+    }
+
+    async function handleReset() {
+      let email;
+      try {
+        email = await verifyPasswordResetCode(auth, oobCode);
+      } catch (e) {
+        renderState("err", T.invalidTitle, T.invalidSub);
+        return;
+      }
+      content.innerHTML = `
+        <h1>${T.resetTitle}</h1>
+        <p class="auth-sub">${T.resetSubtitle(email)}</p>
+        <form id="form" novalidate>
+          <label class="auth-label" for="pw">${T.newPassword}</label>
+          <div class="auth-field">
+            <input id="pw" type="password" autocomplete="new-password" required />
+            <button type="button" class="auth-toggle" data-target="pw" aria-label="toggle">${eyeOff}</button>
+          </div>
+          <label class="auth-label" for="pw2">${T.confirmPassword}</label>
+          <div class="auth-field">
+            <input id="pw2" type="password" autocomplete="new-password" required />
+            <button type="button" class="auth-toggle" data-target="pw2" aria-label="toggle">${eyeOff}</button>
+          </div>
+          <p class="auth-hint">${T.passwordHint}</p>
+          <button type="submit" class="btn btn-primary auth-submit" id="submit">${T.save}</button>
+          <div class="auth-msg" id="msg"></div>
+        </form>`;
+
+      content.querySelectorAll(".auth-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = document.getElementById(btn.dataset.target);
+          const show = input.type === "password";
+          input.type = show ? "text" : "password";
+          btn.innerHTML = show ? eyeOpen : eyeOff;
+        });
+      });
+
+      const form = document.getElementById("form");
+      const msg = document.getElementById("msg");
+      const submit = document.getElementById("submit");
+
+      form.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const pw = document.getElementById("pw").value;
+        const pw2 = document.getElementById("pw2").value;
+        msg.className = "auth-msg";
+
+        if (pw.length < 6) { msg.className = "auth-msg error"; msg.textContent = T.tooShort; return; }
+        if (pw !== pw2) { msg.className = "auth-msg error"; msg.textContent = T.mismatch; return; }
+
+        submit.disabled = true;
+        submit.textContent = T.saving;
+        try {
+          await confirmPasswordReset(auth, oobCode, pw);
+          renderState("ok", T.successTitle, T.successSub);
+        } catch (e) {
+          submit.disabled = false;
+          submit.textContent = T.save;
+          msg.className = "auth-msg error";
+          msg.textContent = T.genericError;
+        }
+      });
+    }
+
+    async function handleVerify() {
+      try {
+        await applyActionCode(auth, oobCode);
+        renderState("ok", T.verifyTitle, T.verifySub);
+      } catch (e) {
+        renderState("err", T.invalidTitle, T.invalidSub);
+      }
+    }
+
+    async function handleRecover() {
+      try {
+        await checkActionCode(auth, oobCode);
+        await applyActionCode(auth, oobCode);
+        renderState("ok", T.recoverTitle, T.recoverSub);
+      } catch (e) {
+        renderState("err", T.invalidTitle, T.invalidSub);
+      }
+    }
+
+    if (!mode || !oobCode) {
+      renderState("err", T.invalidTitle, T.invalidSub);
+    } else if (mode === "resetPassword") {
+      handleReset();
+    } else if (mode === "verifyEmail") {
+      handleVerify();
+    } else if (mode === "recoverEmail") {
+      handleRecover();
+    } else {
+      renderState("err", T.invalidTitle, T.invalidSub);
+    }
+  </script>
+</body>
+</html>
