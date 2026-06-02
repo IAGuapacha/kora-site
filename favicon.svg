@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kora">
+  <defs>
+    <radialGradient id="k" cx="30%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#4A9D8C"/>
+      <stop offset="55%" stop-color="#2E7D6B"/>
+      <stop offset="100%" stop-color="#1E5D4D"/>
+    </radialGradient>
+    <mask id="crescent">
+      <rect width="64" height="64" fill="black"/>
+      <rect x="18" y="18" width="28" height="28" rx="9" fill="white"/>
+      <circle cx="42" cy="42" r="13" fill="black"/>
+    </mask>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#k)"/>
+  <rect width="64" height="64" rx="16" fill="none" stroke="#1E5D4D" stroke-opacity="0.4" stroke-width="2"/>
+  <rect width="64" height="64" fill="#F5F9F7" mask="url(#crescent)"/>
+</svg>
